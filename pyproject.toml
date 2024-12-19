@@ -1,0 +1,39 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    { name = "Manuel Garcia", email = "31109774+Mandroide@users.noreply.github.com" },
+]
+dependencies = [
+    "django",
+    "djangorestframework",
+    "django-environ",
+    "psycopg2",
+    "markdown",
+    "django-filter",
+    "django-cors-headers",
+]
+requires-python = ">=3.12.0"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+
+[[tool.pdm.source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+]
